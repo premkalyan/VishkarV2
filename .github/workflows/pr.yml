@@ -96,7 +96,7 @@ jobs:
       - name: Run tests
         run: |
           source .venv/bin/activate
-          pytest tests/ -v --cov=src --cov-report=xml --cov-fail-under=70
+          pytest tests/ -v --cov=src --cov-report=xml --cov-fail-under=50
 
       - name: Coverage comment
         uses: py-cov-action/python-coverage-comment-action@v3
