@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-01-09T02:20:00Z",
+  "lessons": [
+    {
+      "task_id": "V2-32",
+      "category": "ci_cd",
+      "lesson": "Use uv instead of pip for 10-100x faster package installation in CI",
+      "severity": "medium",
+      "date": "2026-01-09"
+    },
+    {
+      "task_id": "V2-32",
+      "category": "ci_cd",
+      "lesson": "Pin GitHub Actions to major versions (v4, v5) for stability while getting security updates",
+      "severity": "medium",
+      "date": "2026-01-09"
+    },
+    {
+      "task_id": "V2-32",
+      "category": "ci_cd",
+      "lesson": "Use continue-on-error for non-blocking checks (Codecov) but fail on critical checks (lint, test)",
+      "severity": "high",
+      "date": "2026-01-09"
+    },
+    {
+      "task_id": "V2-32",
+      "category": "security",
+      "lesson": "Include Bandit security scanning and Safety dependency checks in PR workflow",
+      "severity": "high",
+      "date": "2026-01-09"
+    },
+    {
+      "task_id": "V2-32",
+      "category": "testing",
+      "lesson": "Write tests to validate CI workflow structure (jobs, triggers, versions)",
+      "severity": "medium",
+      "date": "2026-01-09"
+    }
+  ],
+  "patterns": {
+    "github_actions": {
+      "recommended_actions": [
+        "actions/checkout@v4",
+        "actions/setup-python@v5",
+        "astral-sh/setup-uv@v4",
+        "actions/upload-artifact@v4"
+      ],
+      "job_structure": ["lint", "typecheck", "test", "build"],
+      "triggers": {
+        "ci": ["push to main/master", "pull_request"],
+        "pr": ["pull_request opened/synchronize/reopened"]
+      }
+    }
+  }
+}
